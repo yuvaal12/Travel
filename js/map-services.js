@@ -9,6 +9,7 @@ function initMap() {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 14
     });
+    console.log(map);
     var infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -33,6 +34,18 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
+
+    map.addListener('click', function(e) {
+        placeMarkerAndPanTo(e.latLng, map);
+    });
+}
+
+function placeMarkerAndPanTo(latLng, map) {
+    var marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+    });
+    map.panTo(latLng);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -55,7 +68,9 @@ function addMarker(feature) {
     var marker = new google.maps.Marker({
         position: feature.pos,
         icon: icons[feature.type].icon,
+        draggable: true,
         map: map
+
     });
 }
 
