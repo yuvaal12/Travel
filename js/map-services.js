@@ -3,6 +3,7 @@ var gLocations = [];
 var map;
 var iconBase = '../img/';
 var feature;
+
 function initMap() {
     map = new google.maps.Map(document.querySelector('.map'), {
         center: { lat: -34.397, lng: 150.644 },
@@ -11,7 +12,7 @@ function initMap() {
     var infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
@@ -25,7 +26,7 @@ function initMap() {
                 pos: pos
             }
             addMarker(feature);
-        }, function () {
+        }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
@@ -52,8 +53,13 @@ function addMarker(feature) {
         }
     };
     var marker = new google.maps.Marker({
-      position: feature.pos,
-      icon: icons[feature.type].icon,
-      map: map
+        position: feature.pos,
+        icon: icons[feature.type].icon,
+        map: map
     });
-  } 
+}
+
+
+function addLocation(location) {
+    gLocations.push(location);
+}

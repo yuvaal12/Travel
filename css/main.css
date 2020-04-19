@@ -54,18 +54,17 @@ button {
     border: none;
     border-radius: 15px;
     font-size: 18px;
-    color: white;
-    background-color: rgba(110, 110, 110, 0.671);
+    color: rgb(5, 5, 5);
     padding: 5px;
     text-align: center;
-    /* box-shadow: 1px 3px 3px black; */
     font-family: porietone;
-    border: 1px solid black;
     cursor: pointer;
+    box-shadow: 2px 2px 3px black;
 }
 
 button:hover {
-    background-color: rgba(255, 197, 73, 0.671);
+    background-color: rgba(3, 3, 3);
+    color: white;
 }
 
 h2 {
@@ -77,6 +76,14 @@ table,
 td,
 th {
     border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+}
+
+td .action {
+    display: flex;
 }
 
 .map {
