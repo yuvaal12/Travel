@@ -1,12 +1,62 @@
+@font-face {
+    font-family: indieFlower;
+    src: url(../fonts/IndieFlower/IndieFlower-Regular.ttf);
+}
+
+@font-face {
+    font-family: porietone;
+    src: url(../fonts/porietone/PoiretOne-Regular.ttf);
+}
+
+body {
+    background-color: rgb(173, 173, 173);
+}
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgb(250, 189, 77);
+    box-shadow: 2px 6px 5px black;
+    font-family: porietone;
 }
 
-main {
-    background-color: rgb(165, 165, 165);
+table {
+    box-shadow: 2px 6px 5px black;
+    background-color: white;
+    margin: 20px auto;
+}
+
+input {
+    border: none;
+    border-radius: 12px;
+    font-size: 22px;
+    text-align: center;
+    box-shadow: 2px 6px 5px black;
+    background-color: rgb(255, 222, 160);
+    color: white;
+    font-family: porietone;
+}
+
+.location {
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 6px 5px black;
+    padding: 20px;
+    font-family: porietone;
+}
+
+button {
+    border-radius: 12px;
+    font-size: 20px;
+    background-color: rgb(255, 222, 160);
+    box-shadow: 2px 6px 5px black;
+    font-family: porietone;
+}
+
+h2 {
+    text-align: center;
+    font-family: porietone;
 }
 
 table,
@@ -20,4 +70,5 @@ th {
     height: 400px;
     border-radius: 20px;
     box-shadow: 2px 6px 5px black;
+    margin: 20px auto;
 }
