@@ -1,4 +1,4 @@
-export class locationPrev {
+export class locationPrevie {
     constructor(id, info, onDeleteLoc, onUpdateLoc) {
         this.location = {
             id,

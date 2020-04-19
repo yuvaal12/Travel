@@ -63,3 +63,7 @@ function addMarker(feature) {
 function addLocation(location) {
     gLocations.push(location);
 }
+
+function getLocations(){
+    return gLocations;
+}
