@@ -1,10 +1,8 @@
 'use strict';
-var gLocations = [
-    {
-        id: 1,
-        info: { lat: -34.397, lng: 150.644 }
-    }
-];
+var gLocations = [{
+    id: 1,
+    info: { lat: -34.397, lng: 150.644 }
+}];
 var map;
 var iconBase = '../img/';
 var feature;
@@ -16,7 +14,11 @@ function addLocation(info) {
         info
     };
     gLocations.push(loc);
+    // console.log(gLocations);
+
 }
+
+
 
 function initMap() {
     map = new google.maps.Map(document.querySelector('.map'), {
@@ -26,7 +28,7 @@ function initMap() {
     var infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
@@ -41,17 +43,13 @@ function initMap() {
                 pos: pos
             }
             addMarker(feature);
-        }, function () {
+        }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-
-    map.addListener('click', function (e) {
-        placeMarkerAndPanTo(e.latLng, map);
-    });
 }
 
 function placeMarkerAndPanTo(latLng, map) {
@@ -59,8 +57,11 @@ function placeMarkerAndPanTo(latLng, map) {
         position: latLng,
         map: map
     });
+    addLocation(latLng)
     map.panTo(latLng);
 }
+
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -89,10 +90,6 @@ function addMarker(feature) {
 }
 
 
-function addLocation(location) {
-    gLocations.push(location);
-}
-
 function getLocations() {
     return gLocations;
 }
@@ -108,7 +105,11 @@ function getLoc(onSuccess, url) {
     xhr.open('GET', url)
     xhr.send();
 }
+
 function getLngLnt(loc) {
     var pos = loc[0].geometry.location;
     map.setCenter(pos);
 }
+
+
+function getMap() { return map }

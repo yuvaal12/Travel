@@ -45,10 +45,10 @@ table {
 input {
     border: none;
     border-radius: 12px;
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
     background-color: rgb(252, 244, 229);
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: porietone;
 }
 
@@ -95,7 +95,7 @@ td .action {
 }
 
 .map {
-    width: 80%;
+    width: 90%;
     height: 400px;
     border-radius: 20px;
     box-shadow: 2px 6px 5px black;
