@@ -1,58 +1,29 @@
 'use strict';
-var gLocations = [
-    {
-        id: 1,
-        info: { lat: -34.397, lng: 150.644 },
-        weather: 'sunny'
-    }
-];
+var gLocations = [];
 var map;
 var iconBase = '../img/';
 var feature;
 var id = 0;
-
 function addLocation(info,weather) {
-    var loc = {
-        id: id++,
-        info,
-        weather
-    };
-    gLocations.push(loc);
+    var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${info.lat},${info.lng}&key=AIzaSyDNaZfXPuRjFXlWD7R3gVeunJYjYHERdDg`
+    getLoc(function(result){
+        let adress = result[0].formatted_address; 
+        console.log(adress);
+        var loc = {
+            id: id++,
+            adress,
+            weather
+        };
+         gLocations.push(loc);
+    }, url)
 }
-
 function initMap() {
+    var pos = {lat: -34.397, lng: 150.644 }
     map = new google.maps.Map(document.querySelector('.map'), {
-        center: { lat: -34.397, lng: 150.644 },
+        center: pos,
         zoom: 14
     });
-    var infoWindow = new google.maps.InfoWindow;
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-            feature = {
-                type: 'home',
-                pos: pos
-            }
-            addMarker(feature);
-        }, function () {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-
-    map.addListener('click', function (e) {
-        placeMarkerAndPanTo(e.latLng, map);
-    });
+    addLocation(pos,'first Pos');
 }
 
 function placeMarkerAndPanTo(latLng, map) {
@@ -89,11 +60,6 @@ function addMarker(feature) {
     });
 }
 
-
-function addLocation(location) {
-    gLocations.push(location);
-}
-
 function getLocations() {
     return gLocations;
 }
@@ -103,7 +69,8 @@ function getLoc(onSuccess, url) {
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             const ans = JSON.parse(xhr.responseText);
-            onSuccess(ans.results)
+            onSuccess(ans.results)  
+            console.log(ans);
         }
     }
     xhr.open('GET', url)
@@ -112,4 +79,34 @@ function getLoc(onSuccess, url) {
 function getLngLnt(loc) {
     var pos = loc[0].geometry.location;
     map.setCenter(pos);
+    placeMarkerAndPanTo(pos, map);
+    addLocation(pos,'cold');
+}
+
+function getToMyLoc(){
+    var infoWindow = new google.maps.InfoWindow;
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+            addLocation(pos,'Home')
+            feature = {
+                type: 'home',
+                pos: pos
+            }
+            addMarker(feature);
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }

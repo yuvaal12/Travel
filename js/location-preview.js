@@ -1,3 +1,4 @@
+
 export class locationPrevie {
     constructor(id, info,weather, onDeleteLoc = {}, onUpdateLoc = {}) {
         this.location = {
@@ -11,7 +12,9 @@ export class locationPrevie {
     render() {
         var elLoc = document.createElement('tr');
         var strHtml = '';
-        strHtml += `<td>${this.location.id}</td><td>${this.location.info.lat}  ${this.location.info.lng}</td><td>${this.location.weather}</td>`;
+        strHtml += `<td>${this.location.id}</td>`
+        strHtml += `<td>${this.location.info}</td>`;
+        strHtml +=`<td>${this.location.weather}</td>`;
         elLoc.innerHTML = strHtml;
         var elAction =document.createElement('td');
         elAction.classList.add('action');
