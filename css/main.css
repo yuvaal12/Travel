@@ -51,13 +51,18 @@ input {
 }
 
 button {
+    border: none;
     border-radius: 12px;
     font-size: 20px;
     background-color: rgb(255, 222, 160);
     box-shadow: 1px 3px 3px black;
     font-family: porietone;
+    color: black;
+    cursor: pointer;
 }
-
+button:hover{
+    background-color: rgb(184, 158, 110);
+}
 h2 {
     text-align: center;
     font-family: porietone;
@@ -68,6 +73,12 @@ td,
 th {
     border: 1px solid black;
 }
+td{
+    padding: 10px;
+}
+td .action{
+    display: flex;
+}
 
 .map {
     width: 40%;
@@ -76,3 +87,4 @@ th {
     box-shadow: 2px 6px 5px black;
     margin: 20px auto;
 }
+

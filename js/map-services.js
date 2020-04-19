@@ -57,3 +57,8 @@ function addMarker(feature) {
       map: map
     });
   } 
+
+
+  function addLocation(location){
+    gLocations.push(location);
+  }
