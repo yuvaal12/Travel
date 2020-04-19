@@ -9,49 +9,50 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-logo">
-            <h1>TravelTip</h1>
-        </div>
-        <div class="nav-container">
-            <input placeholder="enter a location">
-            <button>GO</button>
-            <button>MY LOCATION</button>
-        </div>
-    </nav>
-    <main>
-        <div class="location">
-            <h2>location: <span>location go here</span></h2>
-            <button>copy location</button>
-        </div>
-        <table>
-            <h2>Saved location</span>
-            </h2>
-            <tbody>
-                <tr>
-                    <th>id</th>
-                    <th>info</th>
-                    <th>location X</th>
-                    <th>location Y</th>
-                </tr>
-                <tr>
-                    <td>111</td>
-                    <td>ccccccccccccccc</td>
-                    <td>121</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>222</td>
-                    <td>dddddddd</td>
-                    <td>3</td>
-                    <td>222</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <h1>TravelTip</h1>
+            </div>
+            <div class="nav-container">
+                <input placeholder="enter a location">
+                <button>GO</button>
+                <button>MY LOCATION</button>
+            </div>
+        </nav>
+        <main>
+            <div class="location">
+                <h2>location: <span>location go here</span></h2>
+                <button>copy location</button>
+            </div>
+            <table>
+                <h2>Saved location</span>
+                </h2>
+                <tbody>
+                    <tr>
+                        <th>id</th>
+                        <th>info</th>
+                        <th>location X</th>
+                        <th>location Y</th>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>ccccccccccccccc</td>
+                        <td>121</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>222</td>
+                        <td>dddddddd</td>
+                        <td>3</td>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <div class="map"></div>
+    </div>
 
-
-    <div class="map"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNaZfXPuRjFXlWD7R3gVeunJYjYHERdDg&callback=initMap">
     </script>
     <script src="js/storage-service.js"></script>

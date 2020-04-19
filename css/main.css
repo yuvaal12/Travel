@@ -17,7 +17,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: rgb(250, 189, 77);
-    box-shadow: 2px 6px 5px black;
+    box-shadow: 1px 3px 2px black;
     font-family: porietone;
 }
 
@@ -25,6 +25,12 @@ table {
     box-shadow: 2px 6px 5px black;
     background-color: white;
     margin: 20px auto;
+}
+
+.container {
+    box-shadow: 2px 6px 5px black;
+    background-color: white;
+    padding: 10px;
 }
 
 input {
@@ -40,8 +46,6 @@ input {
 
 .location {
     text-align: center;
-    background-color: white;
-    box-shadow: 2px 6px 5px black;
     padding: 20px;
     font-family: porietone;
 }
@@ -50,7 +54,7 @@ button {
     border-radius: 12px;
     font-size: 20px;
     background-color: rgb(255, 222, 160);
-    box-shadow: 2px 6px 5px black;
+    box-shadow: 1px 3px 3px black;
     font-family: porietone;
 }
 
