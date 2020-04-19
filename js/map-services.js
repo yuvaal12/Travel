@@ -1,8 +1,18 @@
 'use strict';
 var gLocations = [];
+var map;
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+var icons = {
+    info: {
+        icon: iconBase + 'info-i_maps.png'
+    },
+    home: {
+        icon: iconBase + 'home-i_maps.png'
+    }
+};
 
 function initMap() {
-    var map = new google.maps.Map(document.querySelector('.map'), {
+    map = new google.maps.Map(document.querySelector('.map'), {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 6
     });
@@ -18,7 +28,6 @@ function initMap() {
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
-            var marker = new google.maps.Marker({position: { lat: position.coords.latitude, lng: position.coords.longitude }, map: map});
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -35,3 +44,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+function addMarker(feature) {
+    var marker = new google.maps.Marker({
+      position: feature.pos,
+      icon: icons[feature.type].icon,
+      map: map
+    });
+  } 
