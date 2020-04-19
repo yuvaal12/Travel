@@ -68,6 +68,7 @@ button {
     font-family: porietone;
     cursor: pointer;
     box-shadow: 2px 2px 3px black;
+    margin-left: 5px;
 }
 
 button:hover {
