@@ -23,7 +23,6 @@ function initMap() {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 14
     });
-    console.log(map);
     var infoWindow = new google.maps.InfoWindow;
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
