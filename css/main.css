@@ -1,4 +1,21 @@
-.map{
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(250, 189, 77);
+}
+
+main {
+    background-color: rgb(165, 165, 165);
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+.map {
     width: 50%;
     height: 500px;
 }
