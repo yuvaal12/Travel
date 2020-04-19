@@ -8,10 +8,10 @@ function onInit(){
 }
 
 function renderLocations() {
-    const elTable = document.querySelector('table');    
+    const elTable = document.querySelector('tbody');    
     var locs = getLocations();
     locs.forEach(function (loc) {
-        const locPreview = new locationPreview(loc.id,loc.info)
+        const locPreview = new locationPreview(loc.id,loc.info,loc.weather)
         const elRow = locPreview.render();
         elTable.appendChild(elRow);
     });

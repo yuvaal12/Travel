@@ -2,7 +2,8 @@
 var gLocations = [
     {
         id: 1,
-        info: { lat: -34.397, lng: 150.644 }
+        info: { lat: -34.397, lng: 150.644 },
+        weather: 'sunny'
     }
 ];
 var map;
@@ -10,10 +11,11 @@ var iconBase = '../img/';
 var feature;
 var id = 0;
 
-function addLocation(info) {
+function addLocation(info,weather) {
     var loc = {
         id: id++,
-        info
+        info,
+        weather
     };
     gLocations.push(loc);
 }
@@ -31,7 +33,6 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            //addLocation(pos);
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
