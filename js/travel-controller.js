@@ -1,1 +1,6 @@
-'use strict';
+import './location-preview.js';
+
+
+function renderTable(){
+
+}
