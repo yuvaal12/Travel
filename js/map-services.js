@@ -1,16 +1,8 @@
 'use strict';
 var gLocations = [];
 var map;
-var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-var icons = {
-    info: {
-        icon: iconBase + 'info-i_maps.png'
-    },
-    home: {
-        icon: iconBase + 'home-i_maps.png'
-    }
-};
-
+var iconBase = '../img/';
+var feature;
 function initMap() {
     map = new google.maps.Map(document.querySelector('.map'), {
         center: { lat: -34.397, lng: 150.644 },
@@ -28,6 +20,11 @@ function initMap() {
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
+            feature = {
+                type: 'home',
+                pos: pos
+            }
+            addMarker(feature);
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -46,6 +43,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function addMarker(feature) {
+    var icons = {
+        info: {
+            icon: iconBase + 'info-i_maps.png'
+        },
+        home: {
+            icon: iconBase + 'home-i_maps.png'
+        }
+    };
     var marker = new google.maps.Marker({
       position: feature.pos,
       icon: icons[feature.type].icon,
