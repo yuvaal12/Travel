@@ -19,6 +19,7 @@ nav {
     background-color: rgb(250, 189, 77);
     box-shadow: 1px 3px 2px black;
     font-family: porietone;
+    padding: 10px;
 }
 
 table {
@@ -38,8 +39,7 @@ input {
     border-radius: 12px;
     font-size: 22px;
     text-align: center;
-    box-shadow: 2px 6px 5px black;
-    background-color: rgb(255, 222, 160);
+    background-color: rgb(252, 244, 229);
     color: white;
     font-family: porietone;
 }
@@ -51,11 +51,21 @@ input {
 }
 
 button {
-    border-radius: 12px;
-    font-size: 20px;
-    background-color: rgb(255, 222, 160);
-    box-shadow: 1px 3px 3px black;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(110, 110, 110, 0.671);
+    padding: 5px;
+    text-align: center;
+    /* box-shadow: 1px 3px 3px black; */
     font-family: porietone;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 197, 73, 0.671);
 }
 
 h2 {
