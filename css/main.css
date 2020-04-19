@@ -22,6 +22,14 @@ nav {
     padding: 10px;
 }
 
+main {
+    display: flex;
+}
+
+.colum {
+    flex-basis: 50%;
+}
+
 table {
     box-shadow: 2px 6px 5px black;
     background-color: white;
@@ -92,4 +100,18 @@ td .action {
     border-radius: 20px;
     box-shadow: 2px 6px 5px black;
     margin: 20px auto;
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    body {
+        background-color: yellow;
+    }
+    main {
+        display: block;
+    }
+    nav {
+        display: block;
+        text-align: center;
+    }
 }

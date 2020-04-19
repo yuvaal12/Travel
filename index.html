@@ -15,41 +15,47 @@
                 <h1>TravelTip</h1>
             </div>
             <div class="nav-container">
-                <input class="adress" placeholder="enter a location">
-                <button class="find-loc">GO</button>
+                <input placeholder="enter a location">
+                <button>GO</button>
                 <button>MY LOCATION</button>
             </div>
         </nav>
         <main>
-            <div class="location">
-                <h2>location: <span>location go here</span></h2>
-                <button class="copy">copy location</button>
+            <div class="colum">
+
+                <div class="location">
+                    <h2>location: <span>location go here</span></h2>
+                    <button>copy location</button>
+                </div>
+                <div class="map"></div>
+
             </div>
-            <table>
-                <h2>Saved location</span>
-                </h2>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Info</th>
-                        <th>Weather</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>111</td>
-                        <td>ccccccccccccccc</td>
-                        <td>1</td>
-                        <td class="action">
-                            <button>Delete</button>
-                            <button>Update</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="colum">
+                <table>
+                    <h2>Saved location</span>
+                    </h2>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Info</th>
+                            <th>Weather</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>111</td>
+                            <td>ccccccccccccccc</td>
+                            <td>1</td>
+                            <td class="action">
+                                <button>Delete</button>
+                                <button>Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
-        <div class="map"></div>
     </div>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNaZfXPuRjFXlWD7R3gVeunJYjYHERdDg&callback=initMap">
